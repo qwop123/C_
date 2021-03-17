@@ -1,14 +1,51 @@
-﻿#include <stdio.h>
+﻿#include <stdio.h> // <stdio.h> 표준 입력, 출력 기능 printf기능 ... 
 
-int main()
-{
-    int hp = 1000; //변수.보관.32bit.
 
-    char lv = 99; //저장, 불필요한 메모리공간. int x 
-}
 
-// 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
-// 프로그램 디버그: <F5> 키 또는 [디버그] > [디버깅 시작] 메뉴
+    // 2021.3.16
+
+    //int main()
+    //{
+    // int hp = 1000; //변수.보관.32bit.   
+    // char lv = 99; //저장, 불필요한 메모리공간. int x 
+    //}
+
+    // 2021.3.17 변수선언
+
+    int main()
+    {
+        // char ch = 'A'; // A = 65 아스키코드 , 문자 =  ' ' , 문장 = " "
+        int age = 140;
+        int hp = 100;
+        hp = hp - 10;
+        printf("체력은 %d 입니다",hp);
+        printf("안녕하세요.\n ㅇㅇㅇ");
+    }
+        //char age = 0; // 알수없는값 = 0으로 초기화 
+        //int c = 10;
+        //int d = age + c;
+        //float height = 180.3; // 4 byte
+        //double weight = 88.5; // 8 byte
+
+        //int hp = 0;
+        //float atk = 0;
+        //float def = 0;
+        //char lv = 0;
+        //float cri = 0;
+
+    // int a = 30;
+    // int age = 20; , int Age = 30;
+    // int monster_hp; or int monsterHp; ,, int monsterHp1; int monsterHp2; int monsterHp3;
+    // int hp;
+    // 알파벳 대소문자 언더바 중복x
+    // 주석 - 설명 *** 
+    // 캐릭터의 체력 int heroHp;
+    
+
+
+
+// 프로그램 실행: <ctrl+f5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
+// 프로그램 디버그: <f5> 키 또는 [디버그] > [디버깅 시작] 메뉴
 
 // 시작을 위한 팁: 
 //   1. [솔루션 탐색기] 창을 사용하여 파일을 추가/관리합니다.
