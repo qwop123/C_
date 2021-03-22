@@ -1,4 +1,6 @@
-﻿#include <stdio.h> // <stdio.h> 표준 입력, 출력 기능 printf기능 ... 
+﻿
+#define _CRT_SECURE_NO_WARNINGS  
+#include <stdio.h> // <stdio.h> 표준 입력, 출력 기능 printf기능 ... 
 
 
 
@@ -51,34 +53,30 @@
 
         printf("a +b = %d\n", a +b);*/
 
-        char name = 0; // *** 0 초기화해주기
-        int age = 0;
-        float weight = 0;
-        float height = 0;
+       // char name = 0; // *** 0 초기화해주기d
+       // int age = 0;
+       // float weight = 0;
+       // float height = 0;
 
-        printf("이름 :  ");
-        scanf("%s", &name);
-        
+       // printf("이름 :  ");
+       // scanf("%s", &name);
+       // 
 
-        printf("나이 :  ");
-        scanf("%d", &age);
-        
+       //printf("나이 :  ");
+       // scanf("%d", &age);
+       // 
 
-        printf("몸무게 :  ");
-        scanf("%f", &height);
-        
+       // printf("몸무게 :  ");
+       // scanf("%f", &height);
+       // 
 
-        printf("키 :  ");
-        scanf("%f", &height);
-        
-        printf("이름 [%3s] , 나이 [%3d]세 , 키[%.1f], 몸무게 [%.1f]", name, age, weight, height);
-
-
+       // printf("키 :  ");
+       // scanf("%f", &height);
+       // 
+       // printf("이름 [%3s] , 나이 [%3d]세 , 키[%.1f], 몸무게 [%.1f]", name, age, weight, height);
 
 
-
-
-        //printf("안녕ㅇㅇㅇ");
+           //printf("안녕ㅇㅇㅇ");
         /*printf("소리 : \a\n");
         printf("\t탭\n");
         printf("개행 \n");
@@ -87,6 +85,42 @@
         printf("큰따옴표 : \"\" \n");
         printf("백스페이스\b \n");
         printf("체인지 리턴 \r캐리지\n");*/
+
+        // 2021.3.22 < 연산자 >
+        //int a = 1;
+        //int b = 1;
+        //printf("%d\n", ++a); // 2 , a에 먼저 더하고 출력
+        //printf("%d\n", b++); // 1 , 출력 후 다음 라인에서 + 1
+
+        // 연산자 == 같다
+        // ex) hp = 0 -> hp가 0이다, hp == 0  => hp가 0일때
+
+        // & -> and , || -> or , ! -> 부정
+       /* int hp = 100;
+        int fever = 100;*/
+
+       /* if (hp <= 30 && fever == 10 )
+        {
+
+        }
+
+        if (hp <= 30 || fever == 10)
+        {
+
+        }*/
+
+        //if (fever==1) // 변수만 넣으면 있음 1 , 없음 0 으로 나뉨 ex) if (fever)
+        //{
+        //    printf("발동!!\n");
+        //}
+
+        unsigned char val1 = 7, val2 = 5;
+        printf("val1 & val2 = %d \n", val1&val2);
+        printf("val1 | val2 = %d \n", val1|val2);
+        printf("val1 ^ val2 = %d \n", val1^val2);
+        printf("val1 = val2 = %d \n", ~val1);
+        printf("val1 << val2 = %d \n", val1<<2);
+        printf("val1 >> val2 = %d \n", val2>>2);
 
 
 
