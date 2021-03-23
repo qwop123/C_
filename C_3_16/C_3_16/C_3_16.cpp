@@ -1,6 +1,11 @@
 ﻿
-#define _CRT_SECURE_NO_WARNINGS  
 #include <stdio.h> // <stdio.h> 표준 입력, 출력 기능 printf기능 ... 
+
+//#define WP_SWORD 1
+//#define WP_AXE 2
+//#define WP_GUN 3
+// #define SWORD 1
+// #define AXE 2
 
 
 
@@ -114,16 +119,95 @@
         //    printf("발동!!\n");
         //}
 
-        unsigned char val1 = 7, val2 = 5;
+       /* unsigned char val1 = 7, val2 = 5;
         printf("val1 & val2 = %d \n", val1&val2);
         printf("val1 | val2 = %d \n", val1|val2);
         printf("val1 ^ val2 = %d \n", val1^val2);
         printf("val1 = val2 = %d \n", ~val1);
         printf("val1 << val2 = %d \n", val1<<2);
-        printf("val1 >> val2 = %d \n", val2>>2);
+        printf("val1 >> val2 = %d \n", val2>>2);*/
 
+        // 2021.03.23 
+        /*
+        int num1 = 1;
+        int num2 = 2;
+        int num3 = 3;
+        
+        if (num1 > num2)
+        {
+            if (num1 > num3)
+            {
+                if (num2 > num3)
+                {
+                    printf("num1[%d] num2[%d] num3[%d]", num1, num2, num3);
+                }
+                else
+                {
+                    printf("num1[%d] num3[%d] num2[%d]", num1, num3, num2);
+                }
+            }
+            else
+            {
+                printf("num3[%d] num1[%d] num2[%d]", num3, num1, num2);
+            }
+        }
 
+        else
+        {
+            if (num2 > num3)
+            {
+                if (num1 > num3)
+                {
+                    printf("num2[%d] num1[%d] num3[%d]", num2, num1, num3);
 
+                }
+                else
+                {
+                    printf("num2[%d] num3[%d] num2[%d]", num2, num3, num1);
+
+                }
+            }
+            else
+            {
+                printf("num3[%d] num2[%d] num1[%d]", num3, num2, num1);
+
+            }
+        }*/
+    
+        /*int iWeapon = WP_SWORD | WP_AXE | WP_GUN;
+
+        iWeapon = iWeapon & ~WP_AXE;
+        if (iWeapon & WP_SWORD) printf("SWORD 장착\n");*/
+
+int score;
+printf("점수를 입력 하세요 (0~100): \n");
+scanf("%d", score);
+if ((score > 100) || (score < 0)) 
+{
+    printf("잘못된 입력입니다.");
+}
+else if (score >= 90)
+{
+    printf("A 학점입니다\n");
+}
+else if (score >= 80)
+{
+    printf("B 학점입니다\n");
+}
+else if (score >= 70)
+{
+    printf("C 학점입니다\n");
+}
+else if (score >= 60)
+{
+    printf("D 학점입니다\n");
+}
+else 
+{
+    printf("F 학점입니다");
+}
+return 0;
+        
 
         
 
