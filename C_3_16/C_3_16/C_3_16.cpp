@@ -1,5 +1,6 @@
-﻿
-#include <stdio.h> // <stdio.h> 표준 입력, 출력 기능 printf기능 ... 
+﻿#include <stdio.h> // <stdio.h> 표준 입력, 출력 기능 printf기능 ... 
+//#include <string.h> 
+#pragma warning (disable:4996)
 
 //#define WP_SWORD 1
 //#define WP_AXE 2
@@ -21,6 +22,54 @@
 
     int main() // (void) , printf 부분 변수가 없을때  
     {
+        // 2021.3.25 문자열 초기화 
+
+        //char name[12] = "hello world";
+        // char name[]; X
+        // char name[10] = 0; X
+        // char name[10] = {0, 0, 0, 0, 0, 0, 0};
+        // char name[100] = {0, '\0'}; // 맨 앞에 0으로 초기화 **/
+        // printf("hello");
+        // char name[19] = "add deedee dee";
+        //char name[11];
+        //printf("당신의 이름은 무엇입니까?\n");
+       // scanf("%s", name); // 배열의 경우 & 쓰지않음. 배열의 이름 자체가 첫번째 주소값을 가지고 있음 0번째
+       // printf("%s\n", name);
+
+       // int num[5] = { 1, 2, 3, 4, 5 };
+        // 크기 자동 할당
+        //char name[] = "hello world hello worldhello worldhello worldhello worldhello worldhello world"; 
+
+        /*char name[] = "welcome to SBS Games Academy";
+        for (int i = 0; i < strlen(name); i++)
+        {
+            printf("%c\n", name[i]);
+        }
+        return 0;*/
+
+        /*int num[10] = { 1,2,3,4,5,6,7,8,9,10 };
+        
+
+        for (int i = 0; i < 10; i++)
+            printf("%d\n", num[i]);*/
+        int height = 0;
+        printf("사각형의 높이를 입력해주세요 \n");
+        scanf("%d", &height);
+
+        for (int j = 0; j < height; j++) // 열 y축
+        {
+            for (int i = 0; i < height - j; i++) // 열 y축
+            {
+                printf(" ");
+            }
+            for (int i = 0; i < 2*j+1; i++) // 열 y축
+            {
+                printf("*");
+            }
+            printf("\n");
+        }
+       
+
         // char ch = 'A'; // A = 65 아스키코드 , 문자 =  ' ' , 문장 = " "
        // int age = 140;
       //  int hp = 100;
@@ -179,37 +228,36 @@
         iWeapon = iWeapon & ~WP_AXE;
         if (iWeapon & WP_SWORD) printf("SWORD 장착\n");*/
 
-int score;
-printf("점수를 입력 하세요 (0~100): \n");
-scanf("%d", score);
-if ((score > 100) || (score < 0)) 
-{
-    printf("잘못된 입력입니다.");
-}
-else if (score >= 90)
-{
-    printf("A 학점입니다\n");
-}
-else if (score >= 80)
-{
-    printf("B 학점입니다\n");
-}
-else if (score >= 70)
-{
-    printf("C 학점입니다\n");
-}
-else if (score >= 60)
-{
-    printf("D 학점입니다\n");
-}
-else 
-{
-    printf("F 학점입니다");
-}
-return 0;
-        
-
-        
+        /*int score;
+        printf("점수를 입력 하세요 (0~100): \n");
+        scanf("%d", score);
+        if ((score > 100) || (score < 0)) 
+        {
+            printf("잘못된 입력입니다.");
+        }
+        else if (score >= 90)
+        {
+            printf("A 학점입니다\n");
+        }
+        else if (score >= 80)
+        {
+            printf("B 학점입니다\n");
+        }
+        else if (score >= 70)
+        {
+            printf("C 학점입니다\n");
+        }
+        else if (score >= 60)
+        {
+            printf("D 학점입니다\n");
+        }
+        else 
+        {
+            printf("F 학점입니다");
+        }
+        return 0;*/
+            
+       
 
     }
         //char age = 0; // 알수없는값 = 0으로 초기화 
