@@ -68,6 +68,7 @@
             }
             printf("\n");
         }
+        printf("test");
        
 
         // char ch = 'A'; // A = 65 아스키코드 , 문자 =  ' ' , 문장 = " "
