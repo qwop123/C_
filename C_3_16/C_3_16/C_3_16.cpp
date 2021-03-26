@@ -1,16 +1,150 @@
 ﻿#include <stdio.h> // <stdio.h> 표준 입력, 출력 기능 printf기능 ... 
-//#include <string.h> 
-#pragma warning (disable:4996)
-
-//#define WP_SWORD 1
-//#define WP_AXE 2
-//#define WP_GUN 3
-// #define SWORD 1
-// #define AXE 2
+#include <string.h> 
 
 
+
+    // 2021.03.26 < 반복문 for , while >
+    int main()
+    {
+        /*printf("adssa"); 
+        putchar('a');*/
+        // while 횟수가 명확하지 않은 경우 , *** 탈출조건 (무한루프) *** 
+        // 무한 루프시 for문으로 바꿔본다. 
+        // for문 -> 횟수
+
+        /*int num = 0;
+        int sum = 0;
+        int i = 0;
+        printf("정수를 입력하세요\n");
+        scanf("%d", &num);
+        while (i <= num)
+        {
+            sum += i;
+            i++;
+        }
+        printf("입력한 정수의 1부터의 총합은 %d입니다.\n", sum);
+        return 0;*/
+
+        // 아스키 코드로 65는 문자 'A'입니다.
+      /*  int i = 65;
+        while (i <= 122)
+        {
+            i++;
+        }
+        printf("\n\n");
+        return 0;*/
+
+        /*for (int i = 65; i <= 122; i++)
+        {
+            printf("%5d - %c\t\t", i, i);
+        }
+        printf("\n\n");
+        return 0;*/
+
+      /*  int step = 0;
+        int num = 1;
+        printf("출력할 단을 입력하세요: ");
+        scanf("%d", &step);
+        while (num <= 9)
+        {
+            printf("%d * %d = %d\n", step, num, step * num);
+            num++;
+        }
+        printf("\n");
+        return 0;*/
+
+        //int step = 0;      
+        //printf("출력할 단을 입력하세요: ");
+        //scanf("%d", &step);
+
+        //for (int i = 0; i < 10; i++)
+        //{
+        //    printf("%d * %d = %d\n", step, i, step *i);
+        //}
+        //printf("\n");
+        //return 0; 
+
+        /*  int step = 0;
+        int num = 1;
+        printf("출력할 단을 입력하세요: ");
+        scanf("%d", &step);
+        while (step > 0 && step <= 9)
+        {
+            while (num <= 9)
+            {
+                printf("%d * %d = %d\n", step, num, step * num);
+                num++;
+            }
+            num = 1;
+            printf("\n");
+            printf("출력할 단을 입력하세요: ");
+            scanf("%d", &step);
+
+        }
+        return 0;*/
+
+        /*int step = 0;
+        int num = 1;
+
+        while (true)
+        {
+            printf("출력할 단을 입력하세요: ");
+            scanf("%d", &step);
+            if (step <= 0 || step > 9) break;
+            while (num <= 9)
+            {
+                printf("%d * %d = %d\n", step, num, step * num);
+                num++;
+            }
+            num = 1;
+            printf("\n");
+        }
+         return 0;*/
+
+        //  do while 문에서 while 뒤에 " ; " ***
+
+     /*   int step = 0;
+        int stop = 0;
+        while (true)
+        {
+            do {
+                printf("출력할 단을 입력하세요 : \n");
+                scanf("%d", &step);               
+            } while (step > 9 || step <= 0);
+            for (int i = 1; i <= 9; i++)
+            {
+                printf("%d x %d = %d\n", step, i, (step * i));
+            }
+        }
+        return 0;
+        */
+            
+        int num1 = 0;
+        int num2 = 0;
+        char ch = 0;
+        printf("덧셈 계산기 프로그램입니다.\n");
+        do {
+            printf("두 수를 입력해주세요 : ");
+            scanf("%d %d", &num1, &num2);
+            printf("%d + %d = %d 입니다. \n", num1, num2, num1 + num2);
+            printf("계속 하시겠습니까?(y/n)");
+            while (getchar() != '\n'); // ************
+            scanf("%c", &ch);
+        } while (ch == 'Y' || ch == 'y');
+        return 0;
+                
+        // 키버퍼 연속된 메모리
+        // ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ 
+        // y \n <- 저장되어있음 비워야함 . 숫자는 상관x 
+
+    }
+  
+
+    //==============================================================================================
+            
 
     // 2021.3.16
+
 
     //int main()
     //{
@@ -18,57 +152,59 @@
     // char lv = 99; //저장, 불필요한 메모리공간. int x 
     //}
 
+    //==============================================================================================
+
     // 2021.3.17 < 변수선언 >
 
-    int main() // (void) , printf 부분 변수가 없을때  
-    {
-        // 2021.3.25 문자열 초기화 
+    //int main() // (void) , printf 부분 변수가 없을때  
+    //{
+    //    // 2021.3.25 문자열 초기화 
 
-        //char name[12] = "hello world";
-        // char name[]; X
-        // char name[10] = 0; X
-        // char name[10] = {0, 0, 0, 0, 0, 0, 0};
-        // char name[100] = {0, '\0'}; // 맨 앞에 0으로 초기화 **/
-        // printf("hello");
-        // char name[19] = "add deedee dee";
-        //char name[11];
-        //printf("당신의 이름은 무엇입니까?\n");
-       // scanf("%s", name); // 배열의 경우 & 쓰지않음. 배열의 이름 자체가 첫번째 주소값을 가지고 있음 0번째
-       // printf("%s\n", name);
+    //    //char name[12] = "hello world";
+    //    // char name[]; X
+    //    // char name[10] = 0; X
+    //    // char name[10] = {0, 0, 0, 0, 0, 0, 0};
+    //    // char name[100] = {0, '\0'}; // 맨 앞에 0으로 초기화 **/
+    //    // printf("hello");
+    //    // char name[19] = "add deedee dee";
+    //    //char name[11];
+    //    //printf("당신의 이름은 무엇입니까?\n");
+    //   // scanf("%s", name); // 배열의 경우 & 쓰지않음. 배열의 이름 자체가 첫번째 주소값을 가지고 있음 0번째
+    //   // printf("%s\n", name);
 
-       // int num[5] = { 1, 2, 3, 4, 5 };
-        // 크기 자동 할당
-        //char name[] = "hello world hello worldhello worldhello worldhello worldhello worldhello world"; 
+    //   // int num[5] = { 1, 2, 3, 4, 5 };
+    //    // 크기 자동 할당
+    //    //char name[] = "hello world hello worldhello worldhello worldhello worldhello worldhello world"; 
 
-        /*char name[] = "welcome to SBS Games Academy";
-        for (int i = 0; i < strlen(name); i++)
-        {
-            printf("%c\n", name[i]);
-        }
-        return 0;*/
+    //    /*char name[] = "welcome to SBS Games Academy";
+    //    for (int i = 0; i < strlen(name); i++)
+    //    {
+    //        printf("%c\n", name[i]);
+    //    }
+    //    return 0;*/
 
-        /*int num[10] = { 1,2,3,4,5,6,7,8,9,10 };
+    //    /*int num[10] = { 1,2,3,4,5,6,7,8,9,10 };
+    //    
+
+    //    for (int i = 0; i < 10; i++)
+    //        printf("%d\n", num[i]);*/
+    //    int height = 0;
+    //    printf("사각형의 높이를 입력해주세요 \n");
+    //    scanf("%d", &height);
+
+    //    for (int j = 0; j < height; j++) // 열 y축
+    //    {
+    //        for (int i = 0; i < height - j; i++) // 열 y축
+    //        {
+    //            printf(" ");
+    //        }
+    //        for (int i = 0; i < 2*j+1; i++) // 열 y축
+    //        {
+    //            printf("*");
+    //        }
+    //        printf("\n");
+    //    }
         
-
-        for (int i = 0; i < 10; i++)
-            printf("%d\n", num[i]);*/
-        int height = 0;
-        printf("사각형의 높이를 입력해주세요 \n");
-        scanf("%d", &height);
-
-        for (int j = 0; j < height; j++) // 열 y축
-        {
-            for (int i = 0; i < height - j; i++) // 열 y축
-            {
-                printf(" ");
-            }
-            for (int i = 0; i < 2*j+1; i++) // 열 y축
-            {
-                printf("*");
-            }
-            printf("\n");
-        }
-        printf("test");
        
 
         // char ch = 'A'; // A = 65 아스키코드 , 문자 =  ' ' , 문장 = " "
@@ -77,6 +213,8 @@
        // hp = hp - 10;
        // float height = 130.3;
         //printf("이름은 %s이고 나이는 %d세 키는 %f입니다", "게임", age, height ); // %d, %f , %c 한글자 , %s 문장
+
+    //==============================================================================================
 
     // 2021.3.19 < 서식문자 >
 
@@ -141,6 +279,8 @@
         printf("백스페이스\b \n");
         printf("체인지 리턴 \r캐리지\n");*/
 
+        //==============================================================================================
+
         // 2021.3.22 < 연산자 >
         //int a = 1;
         //int b = 1;
@@ -176,6 +316,8 @@
         printf("val1 = val2 = %d \n", ~val1);
         printf("val1 << val2 = %d \n", val1<<2);
         printf("val1 >> val2 = %d \n", val2>>2);*/
+
+        //==============================================================================================
 
         // 2021.03.23 
         /*
@@ -260,7 +402,7 @@
             
        
 
-    }
+    //}
         //char age = 0; // 알수없는값 = 0으로 초기화 
         //int c = 10;
         //int d = age + c;
