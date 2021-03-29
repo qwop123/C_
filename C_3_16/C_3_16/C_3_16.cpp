@@ -1,11 +1,104 @@
 ﻿#include <stdio.h> // <stdio.h> 표준 입력, 출력 기능 printf기능 ... 
 #include <string.h> 
 
+//==============================================================================================
 
+
+    // 2021.03.29 < 배열 >
+
+        // int 4바이트 ,, int num[5] 20바이트
+        // int num[5]; *** 연속된 메모리 ***
+        // char 1바이트 ,, char name[5] 5바이트
+        // float 4바이트 ,, float pos[5] 20바이트
+        // int num[5] = {1, 2, 3, 4, 5}; 초기화 or int num[5] = {0,}; , int num[5] = {1,1,} 
+    /*int main()
+    {
+        int students[5] = { 0, };
+
+        for (int i = 0; i < 5; i++)
+        {
+            printf("%d번 학생 출석 확인(O , X) : ", i + 1);
+            scanf("%c", &students[i]);
+            while (getchar() != '\n');
+        }
+        printf("\n");
+        for (int i = 0; i < 5; i++)
+        {
+            printf("%d번 학생 출석 : %c\n", i + 1, students[i]);
+        }
+        return 0;
+    }*/
+        // int num[3][5]; = [3 * 5];
+        // ㅁㅁㅁㅁㅁ
+        // ㅁㅁㅁㅁㅁ
+        // ㅁㅁㅁㅁㅁ
+//int main()
+//{
+//    int num[5][7];
+//    int count = 1;
+//    for (int j = 0; j < 5; j++)
+//    {
+//        for (int i = 0; i < 7; i++)
+//        {
+//            num[j][i] = count++;
+//        }
+//        printf("\n");
+//    }
+//
+//    for (int j = 0; j < 5; j++)
+//    {
+//        for (int i = 0; i < 7; i++)
+//        {
+//            printf("%3d", num[j][i]);
+//        }
+//        printf("\n");
+//    }
+//
+//}
+        //int main()
+        //{
+        //    
+        //    int num[5][7];
+        //    int count = 1;
+
+        //    for (int j = 0; j < 5; j++)
+        //    {
+        //        if (j % 2 == 0)
+        //        {
+        //            for (int i = 0; i < 7; i++)
+        //            {
+        //                 num[j][i] = count++;
+
+        //            }
+        //        }
+        //        else
+        //        {
+        //            for (int i = 6; i >= 0; i--)
+        //            {
+        //                num[j][i] = count++;
+        //                //num[j][6-i] = count++;
+
+
+        //            }
+        //        }
+        //        
+        //    }
+
+        //    for (int j = 0; j < 5; j++)
+        //            {
+        //                for (int i = 0; i < 7; i++)
+        //                {
+        //                    printf("%3d", num[j][i]);
+        //                }
+        //                printf("\n");
+        //            }
+        //}
+    
+//==============================================================================================
 
     // 2021.03.26 < 반복문 for , while >
-    int main()
-    {
+    /*int main()
+    {*/
         /*printf("adssa"); 
         putchar('a');*/
         // while 횟수가 명확하지 않은 경우 , *** 탈출조건 (무한루프) *** 
@@ -118,27 +211,27 @@
         }
         return 0;
         */
-            
-        int num1 = 0;
-        int num2 = 0;
-        char ch = 0;
-        printf("덧셈 계산기 프로그램입니다.\n");
-        do {
-            printf("두 수를 입력해주세요 : ");
-            scanf("%d %d", &num1, &num2);
-            printf("%d + %d = %d 입니다. \n", num1, num2, num1 + num2);
-            printf("계속 하시겠습니까?(y/n)");
-            while (getchar() != '\n'); // ************
-            scanf("%c", &ch);
-        } while (ch == 'Y' || ch == 'y');
-        return 0;
-        // test
+        //    
+        //int num1 = 0;
+        //int num2 = 0;
+        //char ch = 0;
+        //printf("덧셈 계산기 프로그램입니다.\n");
+        //do {
+        //    printf("두 수를 입력해주세요 : ");
+        //    scanf("%d %d", &num1, &num2);
+        //    printf("%d + %d = %d 입니다. \n", num1, num2, num1 + num2);
+        //    printf("계속 하시겠습니까?(y/n)");
+        //    while (getchar() != '\n'); // ************
+        //    scanf("%c", &ch);
+        //} while (ch == 'Y' || ch == 'y');
+        //return 0;
+        //// test
                 
         // 키버퍼 연속된 메모리
         // ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ 
         // y \n <- 저장되어있음 비워야함 . 숫자는 상관x 
 
-    }
+    //}
   
 
     //==============================================================================================
