@@ -1,5 +1,159 @@
 ﻿#include <stdio.h> // <stdio.h> 표준 입력, 출력 기능 printf기능 ... 
-#include <string.h> 
+#include <string.h>
+
+// 2021.03.30 < 배열 >
+// #include <stdlib.h> -> 랜덤 기능 사용
+// getchar(); 문자로 하나를 받아옴 1. -> 문자 1 (숫자아님) / key = getchar();
+
+//int main()
+//{
+//    int coins[] = { 500, 100, 50, 10 };
+//    int money = 0;
+//    int key = 0;
+//    while (true)
+//    {
+//        printf("교환 하려는 금액을 입력 해주세요: ");
+//        scanf("%d", &money);
+//        for (int i = 0; i < 4; i++)
+//        {
+//            int count = 0;
+//            while (money / coins[i] > 0)
+//            {
+//                count++;
+//                money -= coins[i];
+//            }
+//            printf("%d 원 : %d개\n", coins[i], count);
+//        }
+//    }
+//}
+
+/* //맵 데이터 관련
+#define MAP_WIDTH 10
+#define MAP_HEIGHT 10
+#define WALL 1
+#define ROAD 0
+#define GEM 2
+
+//이동 방향
+#define UP 1
+#define DOWN 2
+#define LEFT 3
+#define RIGHT 4
+
+
+    int main()
+    {
+        int map[MAP_HEIGHT][MAP_WIDTH] = {
+            { 0,1,1,1,1,1,1,1,1,1 },
+            { 0,0,0,0,0,0,0,0,0,1 },
+            { 1,1,1,1,1,1,1,0,0,1 },
+            { 1,0,0,0,0,0,1,1,0,1 },
+            { 1,0,0,0,2,0,1,1,0,1 },
+            { 1,1,1,1,1,0,1,1,0,1 },
+            { 1,0,0,0,0,0,0,0,0,1 },
+            { 1,0,0,0,0,0,0,0,0,1 },
+            { 1,0,0,0,0,0,0,0,0,1 },
+            { 1,1,1,1,1,1,1,1,1,1 } 
+        };
+        int playerX = 0, playerY = 0;
+        int select = 0;
+        while (1)
+        {
+            for (int i = 0; i < MAP_HEIGHT; i++) // Y축
+            {
+                for (int j = 0; j < MAP_WIDTH; j++) // X축
+                {
+                    if (map[i][j] == ROAD)
+                    {
+                        if (playerX == j && playerY == i)
+                        {
+                            printf("¡");
+                        }
+                        else
+                            printf("□");
+                    }
+                    else if (map[i][j] == WALL)
+                    {
+                        printf("■");
+                    }
+                    else if (map[i][j] == GEM)
+                    {
+                        printf("◈");
+                    }
+                }
+                printf("\n");
+            }
+            printf("1.위 2.아래 3.왼쪽 4.오른쪽 0.종료\n");
+            scanf("%d", &select);
+
+            switch (select)
+            {
+            case UP:
+                if (playerY - 1 >= 0)
+                {
+                    if (map[playerY - 1][playerX] == ROAD)
+                    {
+                        playerY--;
+                    }
+                    else if (map[playerY - 1][playerX] == GEM)
+                    {
+                        printf("축하합니다. 보석을 찾았습니다.\n");
+                        playerX = playerY = 0;
+                    }
+                }
+                break;
+            case DOWN:
+                if (playerY + 1 < MAP_HEIGHT)
+                {
+                    if (map[playerY + 1][playerX] == ROAD)
+                    {
+                        playerY++;
+                    }
+                    else if (map[playerY + 1][playerX] == GEM)
+                    {
+                        printf("축하합니다. 보석을 찾았습니다.\n");
+                        playerX = playerY = 0;
+
+                    }
+                }
+                break;
+            case LEFT:
+                if (playerX - 1 >= 0)
+                {
+                    if (map[playerY][playerX - 1] == ROAD)
+                    {
+                        playerX--;
+                    }
+                    else if (map[playerY][playerX-1] == GEM)
+                    {
+                        printf("축하합니다. 보석을 찾았습니다.\n");
+                        playerX = playerY = 0;
+
+                    }
+                }
+                break;
+            case RIGHT:
+                if (playerX + 1 < MAP_WIDTH)
+                {
+                    if (map[playerY][playerX + 1] == ROAD)
+                    {
+                        playerX++;
+                    }
+                    else if (map[playerY][playerX+1] == GEM)
+                    {
+                        printf("축하합니다. 보석을 찾았습니다.\n");
+                        playerX = playerY = 0;
+
+                    }
+                }
+                break;
+            default:
+                break;
+            }
+        }
+    } */
+    
+    
 
 //==============================================================================================
 
