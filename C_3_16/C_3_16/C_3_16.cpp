@@ -1,9 +1,158 @@
 ﻿#include <stdio.h> // <stdio.h> 표준 입력, 출력 기능 printf기능 ... 
 #include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+// 2021.03.30 < 3차원 배열 >
+        int main()
+        {
+            int input = 0;
+            int num[7] = { 0 };
+            int checkNum[45] = { 0 };
+            srand((unsigned)time(NULL));
+            int value = 0;
+            while (true)
+            {
+                printf("로또 번호 생성기 입니다.");
+                printf("1.번호생성 2.종료하기");
+                scanf("%d", &input);
+                if (input == 1)
+                {
+                    for (int i = 0; i < 7; i++)
+                    {
+                        do
+                        {
+                            value = rand() % 45;
+                        } while (checkNum[value]);
+                        checkNum[value] = 1;
+                        num[i] = value;
+                    }
+                    for (int i = 0; i < 6; i++)
+                    {
+                        printf("%4d", num[i] + 1);
+                    }
+                    printf("\t보너스 %4d", num[6] + 1);
+                    printf("\n");
+                }
+                system("pause");
+                system("cls");
+            }
+            return 0;
+        }
+        //int main()
+        //{
+        //    float pi = 3.14;
+        //    int num = (int)pi; // 형변환
+        //    //srand(time(NULL))
+        //}
+        /* int main()
+         {
+            int num[7] = { 0, };
+            srand((int)time(NULL));      
+            for (int k = 0; k < 5; k++)
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    num[i] = rand() % 45 + 1;
+                    for (int j = 0; j < i; j++)
+                    {
+                        if (num[j] == num[i])
+                        {
+                            i--;
+                            break;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < 7; i++)
+                {
+                    printf("num[%d]: %d\n", i, num[i]);
+                }
+                printf("\n\n");
+            }
+         } */
+//int main()
+//{
+//    char block[7][4][4] = {
+//        {
+//            { 0,0,0,0 },
+//            { 0,1,1,0 },
+//            { 0,1,1,0 },
+//            { 0,0,0,0 },
+//        },
+//        {
+//            { 0,1,0,0 },
+//            { 0,1,0,0 },
+//            { 0,1,0,0 },
+//            { 0,1,0,0 },
+//        },
+//        {
+//            { 0,0,0,0 },
+//            { 1,1,0,0 },
+//            { 0,1,1,0 },
+//            { 0,0,0,0 },
+//        },
+//        {
+//            { 0,0,0,0 },
+//            { 0,0,1,1 },
+//            { 0,1,1,0 },
+//            { 0,0,0,0 },
+//        },
+//        {
+//            { 0,0,0,0 },
+//            { 0,1,0,0 },
+//            { 1,1,1,0 },
+//            { 0,0,0,0 },
+//        },
+//        {
+//            { 0,0,0,0 },
+//            { 1,0,0,0 },
+//            { 1,1,1,0 },
+//            { 0,0,0,0 },
+//        },
+//        {
+//            { 0,0,0,0 },
+//            { 0,0,0,1 },
+//            { 0,1,1,1 },
+//            { 0,0,0,0 },
+//        },
+//    };
+//    int type = 0;
+//    int key = 0;
+//    while (true)
+//    {
+//        for (int i = 0; i < 4; i++)
+//        {
+//            for (int j = 0; j < 4; j++)
+//            {
+//                if (block[type][i][j] == 1)
+//                {
+//                    printf("■");
+//                }
+//                else
+//                    printf("  ");
+//            }
+//            printf("\n");
+//        }
+//        printf("명령을 입력하세요 1.바꾸기 2.종료 \n");
+//        key = getchar();
+//        while (getchar() != '\n');
+//        if (key == '1')
+//        {
+//            type = rand() % 7;
+//        }
+//        else if (key == '2')
+//        {
+//            exit(0);
+//        }
+//    }
+//    return 0;
+//}
+//==============================================================================================
 
 // 2021.03.30 < 배열 >
 // #include <stdlib.h> -> 랜덤 기능 사용
-// getchar(); 문자로 하나를 받아옴 1. -> 문자 1 (숫자아님) / key = getchar();
+// getchar(); 문자로 '한글자만' 받아옴 1. -> 문자 1 (숫자아님) / key = getchar();
 
 //int main()
 //{
@@ -27,7 +176,7 @@
 //    }
 //}
 
-/* //맵 데이터 관련
+ /*//맵 데이터 관련
 #define MAP_WIDTH 10
 #define MAP_HEIGHT 10
 #define WALL 1
@@ -150,6 +299,7 @@
             default:
                 break;
             }
+            system("cls");
         }
     } */
     
