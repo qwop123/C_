@@ -2,9 +2,100 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+// 2021.04.01 < 함수 >
+// 가독성 ↑↑↑
+void Plus(int a, int b) // a , b 매개변수 , 이 값을 전달받아서 활용, 중괄호안에서만 사용
+{
 
-// 2021.03.30 < 3차원 배열 >
-        int main()
+}
+int hp = 100;
+int SetDamage(int damage)
+{
+    hp -= damage;
+    return hp;
+    // int -> return으로 반환 , int 반환값
+}
+/*void Player()
+{
+
+}
+int player;
+
+int main()
+{
+    // 함수 대문자 시작 , 변수 소문자
+}*/
+    // < 가위 바위 보 >
+    //int main()
+    //{
+    //    int player = 0;
+    //    int com = 0;
+    //    int result[3] = { 0, }; // 0 승리 1 무승부 2 패배
+    //    int cnt = 0;
+    //    srand((int)time(NULL));
+    //    while (1)
+    //    {
+    //        com = rand() % 3 + 1;
+    //        printf("[가위 바위 보]\n");
+    //        printf("1.가위 2.바위 3.보 0.종료\n");
+    //        printf("숫자를 입력해 주세요: ");
+    //        scanf("%d", &player);
+    //        
+    //        if (player > 0 && player < 4)
+    //        {          
+    //            cnt++;
+    //            /*if (com == 1)
+    //                printf("\nCom: 가위\n\n");
+    //            if (com == 2)
+    //                printf("\nCom: 바위\n\n");
+    //            if (com == 3)
+    //                printf("\nCom: 보\n\n");
+    //            if (player == 1)
+    //                printf("\nPlayer: 가위\n\n");
+    //            if (player == 2)
+    //                printf("\nPlayer: 바위\n\n");
+    //            if (player == 3)
+    //                printf("\nPlayer: 보\n\n");*/
+    //            printf("\nCom: %s\n", (com == 1 ?"가위": com == 2 ? "바위": "보"));
+    //            printf("Player: %s\n\n", (player == 1 ? "가위" : player == 2 ? "바위" : "보"));
+    //            if (com == player) // 무승부
+    //            {
+    //                printf("Draw!\n\n");
+    //                result[1]++;
+    //            }
+    //            else if (((com == 1) && (player == 3)) ||  // 패배
+    //                     ((com == 2) && (player == 1)) ||
+    //                      ((com == 3) && (player == 2)))
+    //            {
+    //                printf("Lose!\n\n");
+    //                result[2]++;
+    //            }
+    //            else // 승리
+    //            {
+    //                printf("Win!\n\n");
+    //                result[0]++;
+    //            }
+    //            printf("%d전 %d승 %d무 %d패\n\n", cnt,result[0], result[1], result[2]);
+    //        }
+    //        else
+    //        {
+    //            if (player == 0)
+    //            {
+    //                printf("게임을 종료합니다\n\n");
+    //                break;
+    //            }
+    //            printf("숫자를 다시 입력해주세요!\n\n");
+    //        }
+    //        system("pause");
+    //        system("cls");
+    //    }
+
+    //}
+
+//==============================================================================================
+
+// 2021.03.31 < 배열, 랜덤 >
+        /*int main()
         {
             int input = 0;
             int num[7] = { 0 };
