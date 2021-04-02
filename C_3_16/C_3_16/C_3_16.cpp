@@ -2,11 +2,65 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+
+// 2021.04.02 < 함수 , 포인터 * >
+// 전역변수 선언
+/*int a, b;
+int sum;*/ 
+void Input(int * a, int * b) // 해당 변수의 주소 저장.포인터 , int형의 포인터 변수 , int형 변수의 메모리 주소 저장 , 정수의 값 저장X
+{
+    printf("덧셈할 두 정수를 입력하세요\n"); // call by reference ,
+    scanf("%d%d", a, b);
+}
+int Sum(int a, int b) // call by value , 값의 의한 호출
+{
+    return a + b;
+}
+void OutPut(int a, int b, int sum)
+{
+    printf("%d + %d = %d\n", a, b, sum);
+}
+int main(void)
+{
+    int a = 0, b = 0;
+    Input(&a, &b);
+    OutPut(a,b,Sum(a,b));
+    return 0;
+}
+/*void Add();
+int main(void)
+{
+    for (int i = 0; i < 5; i++)
+        Add();
+
+    return 0;
+}
+void Add()
+{
+    static int add = 0; // static -> 데이터 저장 ,프로그램 종료시 소멸
+    printf("현재 값 %d\n", ++add);
+} // 중괄호를 빠져나오면 값 초기화 */
+/*int Sum(int a, int b);
+
+int main(void)
+{
+    int a, b;
+    printf("덧셈할 두 정수를 입력하세요 \n");
+    scanf("%d %d", &a, &b);
+    printf("%d + %d = %d\n", a, b, Sum(a, b));
+}
+int Sum(int a, int b)
+{
+    return a+b;
+}*/
+
+//==============================================================================================
+
 // 2021.04.01 < 함수 >
 // 가독성 ↑↑↑
-void Plus(int a, int b) // a , b 매개변수 , 이 값을 전달받아서 활용, 중괄호안에서만 사용
+/*int Plus(int a, int b) // a , b 매개변수 , 이 값을 전달받아서 활용, 중괄호안에서만 사용
 {
-
+        return a + b;
 }
 int hp = 100;
 int SetDamage(int damage)
@@ -14,7 +68,7 @@ int SetDamage(int damage)
     hp -= damage;
     return hp;
     // int -> return으로 반환 , int 반환값
-}
+}*/
 /*void Player()
 {
 
