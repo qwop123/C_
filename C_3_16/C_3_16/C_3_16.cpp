@@ -2,12 +2,113 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include <conio.h>
+
+//#define LEFT 75
+//#define RIGHT 77
+//#define UP 72
+//#define DOWN 80
+//#define SPACE 32
+//#define ESC 27
+
+// 2021.04.05 < 재귀 함수 팩토리얼, 피보나치 수열, 키보드 입력 처리>
+//int manin()
+//{
+//    int key = 0;
+//    while (true)
+//    {
+//        if (kbhit())
+//        {
+//            key = getch();
+//            if (key == 224)
+//            {
+//                key = getch();
+//                switch (key)
+//                {
+//                case LEFT:
+//                    printf("LEFT 눌림\n");
+//                    break;
+//                case RIGHT:
+//                    printf("RIGHT 눌림\n");
+//                    break;
+//                case UP:
+//                    printf("UP 눌림\n");
+//                    break;
+//                case DOWN:
+//                    printf("DOWN 눌림\n");
+//                    break;
+//                default:
+//                    break;
+//                }
+//            }
+//
+//            
+//        }
+//    }
+//}
+
+
+//********** 재귀 함수 피보나치 수열 예제 **********
+/*int Fibo(int n);
+
+int main(void)
+{
+    int num = 0;
+    printf("피보나치 수열을 계산합니다. 숫자를 입력해주세요 : ");
+    scanf("%d", &num);
+    for (int i = 1; i <= num; i++)
+    {
+        printf("\t%d", Fibo(i));
+    }
+    printf("\n");
+    return 0;
+}
+int Fibo(int n)
+{
+    if (n == 1 || n == 2)
+    {
+        return 1;
+    }
+    else
+    {
+        return Fibo(n - 1) + Fibo(n - 2);
+    }
+}*/
+
+//********** 재귀 함수 팩토리얼 예제 **********
+/*int Factorial(int n); 
+
+int main(void)
+{
+    int num = 0;
+    printf("팩토리얼을 계산합니다. 숫자를 입력해 주세요 : ");
+    scanf("%d", &num);
+    printf("\n%d 팩토리얼 : ", num);
+    printf(" = %d\n", Factorial(num));
+    return 0;
+}
+int Factorial(int n)
+{
+    if (n == 1 || n == 0)
+    {
+        printf("%d", n);
+        return 1;
+    }
+    else
+    {
+        printf("%d * ", n);
+        return n * Factorial(n - 1);
+    }
+}*/
+
+//==============================================================================================
 
 // 2021.04.02 < 함수 , 포인터 * >
 // 전역변수 선언
 /*int a, b;
-int sum;*/ 
-void Input(int * a, int * b) // 해당 변수의 주소 저장.포인터 , int형의 포인터 변수 , int형 변수의 메모리 주소 저장 , 정수의 값 저장X
+int sum;*/
+
+/*void Input(int * a, int * b) // 해당 변수의 주소 저장.포인터 , int형의 포인터 변수 , int형 변수의 메모리 주소 저장 , 정수의 값 저장X
 {
     printf("덧셈할 두 정수를 입력하세요\n"); // call by reference ,
     scanf("%d%d", a, b);
@@ -26,7 +127,7 @@ int main(void)
     Input(&a, &b);
     OutPut(a,b,Sum(a,b));
     return 0;
-}
+}*/
 /*void Add();
 int main(void)
 {
@@ -79,72 +180,82 @@ int main()
 {
     // 함수 대문자 시작 , 변수 소문자
 }*/
-    // < 가위 바위 보 >
-    //int main()
-    //{
-    //    int player = 0;
-    //    int com = 0;
-    //    int result[3] = { 0, }; // 0 승리 1 무승부 2 패배
-    //    int cnt = 0;
-    //    srand((int)time(NULL));
-    //    while (1)
-    //    {
-    //        com = rand() % 3 + 1;
-    //        printf("[가위 바위 보]\n");
-    //        printf("1.가위 2.바위 3.보 0.종료\n");
-    //        printf("숫자를 입력해 주세요: ");
-    //        scanf("%d", &player);
-    //        
-    //        if (player > 0 && player < 4)
-    //        {          
-    //            cnt++;
-    //            /*if (com == 1)
-    //                printf("\nCom: 가위\n\n");
-    //            if (com == 2)
-    //                printf("\nCom: 바위\n\n");
-    //            if (com == 3)
-    //                printf("\nCom: 보\n\n");
-    //            if (player == 1)
-    //                printf("\nPlayer: 가위\n\n");
-    //            if (player == 2)
-    //                printf("\nPlayer: 바위\n\n");
-    //            if (player == 3)
-    //                printf("\nPlayer: 보\n\n");*/
-    //            printf("\nCom: %s\n", (com == 1 ?"가위": com == 2 ? "바위": "보"));
-    //            printf("Player: %s\n\n", (player == 1 ? "가위" : player == 2 ? "바위" : "보"));
-    //            if (com == player) // 무승부
-    //            {
-    //                printf("Draw!\n\n");
-    //                result[1]++;
-    //            }
-    //            else if (((com == 1) && (player == 3)) ||  // 패배
-    //                     ((com == 2) && (player == 1)) ||
-    //                      ((com == 3) && (player == 2)))
-    //            {
-    //                printf("Lose!\n\n");
-    //                result[2]++;
-    //            }
-    //            else // 승리
-    //            {
-    //                printf("Win!\n\n");
-    //                result[0]++;
-    //            }
-    //            printf("%d전 %d승 %d무 %d패\n\n", cnt,result[0], result[1], result[2]);
-    //        }
-    //        else
-    //        {
-    //            if (player == 0)
-    //            {
-    //                printf("게임을 종료합니다\n\n");
-    //                break;
-    //            }
-    //            printf("숫자를 다시 입력해주세요!\n\n");
-    //        }
-    //        system("pause");
-    //        system("cls");
-    //    }
-
-    //}
+    // **************** < 가위 바위 보 > *****************
+///* int player = 0;
+//int com = 0;
+//int result[3] = { 0, }; // 0 승리 1 무승부 2 패배
+//int cnt = 0;
+//
+//void Input()
+//{
+//    com = rand() % 3 + 1;
+//    printf("[가위 바위 보]\n");
+//    printf("1.가위 2.바위 3.보 0.종료\n");
+//    printf("숫자를 입력해 주세요: ");
+//    scanf("%d", &player);
+//}
+//void Game()
+//{
+//    if (player > 0 && player < 4)
+//    {
+//        cnt++;
+//        /*if (com == 1)
+//            printf("\nCom: 가위\n\n");
+//        if (com == 2)
+//            printf("\nCom: 바위\n\n");
+//        if (com == 3)
+//            printf("\nCom: 보\n\n");
+//        if (player == 1)
+//            printf("\nPlayer: 가위\n\n");
+//        if (player == 2)
+//            printf("\nPlayer: 바위\n\n");
+//        if (player == 3)
+//            printf("\nPlayer: 보\n\n");*/
+//        printf("\nCom: %s\n", (com == 1 ? "가위" : com == 2 ? "바위" : "보"));
+//        printf("Player: %s\n\n", (player == 1 ? "가위" : player == 2 ? "바위" : "보"));
+//        if (com == player) // 무승부
+//        {
+//            printf("Draw!\n\n");
+//            result[1]++;
+//        }
+//        else if (((com == 1) && (player == 3)) ||  // 패배
+//            ((com == 2) && (player == 1)) ||
+//            ((com == 3) && (player == 2)))
+//        {
+//            printf("Lose!\n\n");
+//            result[2]++;
+//        }
+//        else // 승리
+//        {
+//            printf("Win!\n\n");
+//            result[0]++;
+//        }
+//        printf("%d전 %d승 %d무 %d패\n\n", cnt, result[0], result[1], result[2]);
+//    }
+//    else
+//    {
+//        if (player == 0)
+//        {
+//            printf("게임을 종료합니다\n\n");
+//            //break;
+//        }
+//        printf("숫자를 다시 입력해주세요!\n\n");
+//    }
+//}
+//    int main()
+//    {
+//        
+//        
+//        srand((int)time(NULL));
+//        while (1)
+//        {        
+//            Input();
+//            Game();
+//            system("pause");
+//            system("cls");
+//        }
+//
+//    } */
 
 //==============================================================================================
 
@@ -321,7 +432,7 @@ int main()
 //    }
 //}
 
- /*//맵 데이터 관련
+ //맵 데이터 관련
 #define MAP_WIDTH 10
 #define MAP_HEIGHT 10
 #define WALL 1
@@ -329,14 +440,16 @@ int main()
 #define GEM 2
 
 //이동 방향
-#define UP 1
-#define DOWN 2
-#define LEFT 3
-#define RIGHT 4
+#define UP 72
+#define DOWN 80
+#define LEFT 75
+#define RIGHT 77
+#define ESC 27
 
 
     int main()
-    {
+    {   
+        
         int map[MAP_HEIGHT][MAP_WIDTH] = {
             { 0,1,1,1,1,1,1,1,1,1 },
             { 0,0,0,0,0,0,0,0,0,1 },
@@ -353,6 +466,7 @@ int main()
         int select = 0;
         while (1)
         {
+            
             for (int i = 0; i < MAP_HEIGHT; i++) // Y축
             {
                 for (int j = 0; j < MAP_WIDTH; j++) // X축
@@ -377,76 +491,102 @@ int main()
                 }
                 printf("\n");
             }
-            printf("1.위 2.아래 3.왼쪽 4.오른쪽 0.종료\n");
-            scanf("%d", &select);
-
-            switch (select)
+            //printf("1.위 2.아래 3.왼쪽 4.오른쪽 0.종료\n");
+            //scanf("%d", &key);
+            int key = 0;
+            if (kbhit())
             {
-            case UP:
-                if (playerY - 1 >= 0)
+                key = getch();
+                if (key == 224)
                 {
-                    if (map[playerY - 1][playerX] == ROAD)
+                    key = getch();
+                    switch (key)
                     {
-                        playerY--;
-                    }
-                    else if (map[playerY - 1][playerX] == GEM)
-                    {
-                        printf("축하합니다. 보석을 찾았습니다.\n");
-                        playerX = playerY = 0;
+                    case UP:
+                        break;
+                    case LEFT:
+                        break;
+                    case RIGHT:
+                        break;
+                    case DOWN:
+                        break;
+                    case ESC:                       
+                        break;
                     }
                 }
-                break;
-            case DOWN:
-                if (playerY + 1 < MAP_HEIGHT)
-                {
-                    if (map[playerY + 1][playerX] == ROAD)
-                    {
-                        playerY++;
-                    }
-                    else if (map[playerY + 1][playerX] == GEM)
-                    {
-                        printf("축하합니다. 보석을 찾았습니다.\n");
-                        playerX = playerY = 0;
-
-                    }
-                }
-                break;
-            case LEFT:
-                if (playerX - 1 >= 0)
-                {
-                    if (map[playerY][playerX - 1] == ROAD)
-                    {
-                        playerX--;
-                    }
-                    else if (map[playerY][playerX-1] == GEM)
-                    {
-                        printf("축하합니다. 보석을 찾았습니다.\n");
-                        playerX = playerY = 0;
-
-                    }
-                }
-                break;
-            case RIGHT:
-                if (playerX + 1 < MAP_WIDTH)
-                {
-                    if (map[playerY][playerX + 1] == ROAD)
-                    {
-                        playerX++;
-                    }
-                    else if (map[playerY][playerX+1] == GEM)
-                    {
-                        printf("축하합니다. 보석을 찾았습니다.\n");
-                        playerX = playerY = 0;
-
-                    }
-                }
-                break;
-            default:
-                break;
             }
-            system("cls");
+                switch (key)
+                {
+                case UP:
+                    if (playerY - 1 >= 0)
+                    {
+                        if (map[playerY - 1][playerX] == ROAD)
+                        {
+                            playerY--;
+                        }
+                        else if (map[playerY - 1][playerX] == GEM)
+                        {
+                            printf("축하합니다. 보석을 찾았습니다.\n");
+                            playerX = playerY = 0;
+                        }
+                    }
+                    break;
+                case DOWN:
+                    if (playerY + 1 < MAP_HEIGHT)
+                    {
+                        if (map[playerY + 1][playerX] == ROAD)
+                        {
+                            playerY++;
+                        }
+                        else if (map[playerY + 1][playerX] == GEM)
+                        {
+                            printf("축하합니다. 보석을 찾았습니다.\n");
+                            playerX = playerY = 0;
+
+                        }
+                    }
+                    break;
+                case LEFT:
+                    if (playerX - 1 >= 0)
+                    {
+                        if (map[playerY][playerX - 1] == ROAD)
+                        {
+                            playerX--;
+                        }
+                        else if (map[playerY][playerX - 1] == GEM)
+                        {
+                            printf("축하합니다. 보석을 찾았습니다.\n");
+                            playerX = playerY = 0;
+
+                        }
+                    }
+                    break;
+                case RIGHT:
+                    if (playerX + 1 < MAP_WIDTH)
+                    {
+                        if (map[playerY][playerX + 1] == ROAD)
+                        {
+                            playerX++;
+                        }
+                        else if (map[playerY][playerX + 1] == GEM)
+                        {
+                            printf("축하합니다. 보석을 찾았습니다.\n");
+                            playerX = playerY = 0;
+
+                        }
+                    }
+                    break;
+                case ESC:
+                    exit(0);
+                    break;
+                default:
+                    break;
+                }
+                _sleep(33); // 1000 -> 1초 
+                system("cls");
+                      
         }
-    } */
+    } 
     
     
 
